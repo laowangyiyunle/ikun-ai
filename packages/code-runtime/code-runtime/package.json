@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-code-runtime",
+  "name": "@ikun-ai/dsh-code-runtime",
   "description": "Abstract code-execution seam (ctx.codeRuntime) for the DeepSeek Harness",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/code-runtime/code-runtime"
   },
   "type": "module",
@@ -32,11 +32,11 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

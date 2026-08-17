@@ -1,4 +1,4 @@
-/** Content-block structure helpers. @module @deepseek-ai/dsh-llm/content */
+/** Content-block structure helpers. @module @ikun-ai/dsh-llm/content */
 
 import type { ContentBlock } from './types.ts'
 

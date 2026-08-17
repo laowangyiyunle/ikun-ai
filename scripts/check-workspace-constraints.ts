@@ -21,41 +21,41 @@ const workspaceGlobs = [
   { dir: 'apps', depth: 1 },
 ] as const
 const vendoredPackages = new Set([
-  '@deepseek-ai/cordis',
-  '@deepseek-ai/cosmokit',
-  '@deepseek-ai/schemastery',
-  '@deepseek-ai/cordis-plugin-loader',
-  '@deepseek-ai/cordis-plugin-include',
-  '@deepseek-ai/cordis-plugin-group',
-  '@deepseek-ai/cordis-plugin-timer',
-  '@deepseek-ai/cordis-plugin-hmr',
-  '@deepseek-ai/cordis-plugin-logger-console',
+  '@ikun-ai/cordis',
+  '@ikun-ai/cosmokit',
+  '@ikun-ai/schemastery',
+  '@ikun-ai/cordis-plugin-loader',
+  '@ikun-ai/cordis-plugin-include',
+  '@ikun-ai/cordis-plugin-group',
+  '@ikun-ai/cordis-plugin-timer',
+  '@ikun-ai/cordis-plugin-hmr',
+  '@ikun-ai/cordis-plugin-logger-console',
 ])
 const publicLandlockPackages = new Set([
-  '@deepseek-ai/node-addon-landlock-run',
-  '@deepseek-ai/node-addon-landlock-run-linux-arm64',
-  '@deepseek-ai/node-addon-landlock-run-linux-x64',
+  '@ikun-ai/node-addon-landlock-run',
+  '@ikun-ai/node-addon-landlock-run-linux-arm64',
+  '@ikun-ai/node-addon-landlock-run-linux-x64',
 ])
 /** Deliberate source payloads whose exact bytes are part of the package's audit surface. */
 const publicationSourceAllowlist: Readonly<Record<string, readonly string[]>> = {
-  '@deepseek-ai/node-addon-landlock-run': ['src/main.c'],
+  '@ikun-ai/node-addon-landlock-run': ['src/main.c'],
 }
-const repositoryUrl = 'git+https://github.com/deepseek-harness/deepseek-harness.git'
+const repositoryUrl = 'git+https://github.com/laowangyiyunle/ikun-ai.git'
 /**
  * Source home the published packages point consumers at. It differs from
  * {@link repositoryUrl}, which the Landlock packages keep because npm resolves
  * their trusted publishing against the repository that runs the workflow.
  */
-const publishedRepositoryUrl = 'git+https://github.com/deepseek-ai/deepseek-harness.git'
+const publishedRepositoryUrl = 'git+https://github.com/laowangyiyunle/ikun-ai.git'
 /** Directories whose packages this repository publishes: one release member each. */
 const releaseMemberDirectory = /^(?:packages\/[^/]+\/[^/]+|apps\/[^/]+|vendor\/[^/]+)$/
 
 const localArtifactDirs = new Set(['node_modules'])
 const appPackageFiles: Readonly<Record<string, readonly string[]>> = {
-  '@deepseek-ai/dsh': ['lib/*.js', 'config'],
+  '@ikun-ai/ikun': ['lib/*.js', 'config'],
   // The Web build emits sourcemaps for browser debugging; publishing them is
   // what the payload policy forbids, so the bundle ships without them.
-  '@deepseek-ai/dsh-web-frontend': ['dist', '!dist/**/*.map'],
+  '@ikun-ai/dsh-web-frontend': ['dist', '!dist/**/*.map'],
 }
 
 /** The subset of package.json fields this constraint check cares about. */
@@ -132,19 +132,19 @@ function workspaceManifests(): WorkspaceManifest[] {
 
 const packageFileExtras: Readonly<Record<string, readonly string[]>> = {
   // Profile bundles publish their dsh.bundle.patch layer beside the lib.
-  '@deepseek-ai/dsh-base': ['cordis.patch.yml'],
-  '@deepseek-ai/dsh-web-app': ['cordis.patch.yml'],
-  '@deepseek-ai/dsh-headless': ['cordis.patch.yml'],
-  '@deepseek-ai/dsh-client-ui-theme': ['lib/styles'],
+  '@ikun-ai/dsh-base': ['cordis.patch.yml'],
+  '@ikun-ai/dsh-web-app': ['cordis.patch.yml'],
+  '@ikun-ai/dsh-headless': ['cordis.patch.yml'],
+  '@ikun-ai/dsh-client-ui-theme': ['lib/styles'],
   // The Python runtime uses a distinct closed-resolution bin; the public CLI
   // keeps config-owned bare-package resolution through lib/bin.js.
-  '@deepseek-ai/dsh-sdk-jsonrpc-demo': ['lib/packaged-bin.js'],
+  '@ikun-ai/dsh-sdk-jsonrpc-demo': ['lib/packaged-bin.js'],
   // The argv-prefix runner entry ships beside the lib as its own bundle;
   // sandbox-local resolves it through the package's ./runner export. tsdown
   // also shares its generated FFI code through a hashed runtime chunk.
-  '@deepseek-ai/dsh-sandbox-windows-acl': ['lib/runner.js', 'lib/types-*.js'],
-  '@deepseek-ai/dsh-skill-badge': ['assets'],
-  '@deepseek-ai/dsh-subprocess-local': ['scripts/ensure-spawn-helper.mjs'],
+  '@ikun-ai/dsh-sandbox-windows-acl': ['lib/runner.js', 'lib/types-*.js'],
+  '@ikun-ai/dsh-skill-badge': ['assets'],
+  '@ikun-ai/dsh-subprocess-local': ['scripts/ensure-spawn-helper.mjs'],
 }
 
 function sameStringList(actual: readonly string[] | undefined, expected: readonly string[]): boolean {
@@ -247,10 +247,8 @@ function checkWorkspace({ dir, manifest }: WorkspaceManifest): string[] {
     //
     // Access is per release sequence, not per scope: the vendored framework and
     // the Landlock packages publish publicly because outside consumers install
-    // them, while the dsh family stays restricted until its own sequence goes
-    // public. A mixed scope is why no publish path passes `--access` — one flag
-    // cannot serve both, so each packed manifest decides
-    // ([rationale](../.agents/notes/implemented/process/2026-08-13-public-vendor-and-native-sequences.md)).
+    // them, and the ikun family publishes publicly with the CLI. Each packed
+    // manifest declares its own `publishConfig`.
     if (manifest.private === true) {
       errors.push(`${label}: release member must not set "private": true`)
     }
@@ -270,7 +268,7 @@ function checkWorkspace({ dir, manifest }: WorkspaceManifest): string[] {
     return errors
   }
 
-  if (manifest.name?.startsWith('@deepseek-ai/')) {
+  if (manifest.name?.startsWith('@ikun-ai/')) {
     const allowedSources = publicationSourceAllowlist[manifest.name] ?? []
     for (const file of manifest.files ?? []) {
       if (isForbiddenPublicationFile(file) && !allowedSources.includes(file)) {
@@ -279,7 +277,7 @@ function checkWorkspace({ dir, manifest }: WorkspaceManifest): string[] {
     }
   }
 
-  if (dir.startsWith('apps/') && manifest.name?.startsWith('@deepseek-ai/')) {
+  if (dir.startsWith('apps/') && manifest.name?.startsWith('@ikun-ai/')) {
     const expectedFiles = appPackageFiles[manifest.name]
     if (expectedFiles === undefined) {
       errors.push(`${label}: app package has no publication files policy`)
@@ -297,14 +295,14 @@ function checkWorkspace({ dir, manifest }: WorkspaceManifest): string[] {
     }
   }
 
-  if (dir.startsWith('packages/') && manifest.name?.startsWith('@deepseek-ai/dsh-')) {
-    const peer = manifest.peerDependencies?.['@deepseek-ai/cordis']
-    const dev = manifest.devDependencies?.['@deepseek-ai/cordis']
+  if (dir.startsWith('packages/') && manifest.name?.startsWith('@ikun-ai/dsh-')) {
+    const peer = manifest.peerDependencies?.['@ikun-ai/cordis']
+    const dev = manifest.devDependencies?.['@ikun-ai/cordis']
 
-    if (!peer) errors.push(`${label}: @deepseek-ai/cordis must be a peerDependency`)
-    if (!dev) errors.push(`${label}: @deepseek-ai/cordis must also be a devDependency`)
+    if (!peer) errors.push(`${label}: @ikun-ai/cordis must be a peerDependency`)
+    if (!dev) errors.push(`${label}: @ikun-ai/cordis must also be a devDependency`)
     if (peer && dev && peer !== dev) {
-      errors.push(`${label}: @deepseek-ai/cordis peer (${peer}) and dev (${dev}) ranges must match`)
+      errors.push(`${label}: @ikun-ai/cordis peer (${peer}) and dev (${dev}) ranges must match`)
     }
     if (manifest.version !== repositoryVersion) {
       errors.push(`${label}: package.json version must match root version ${repositoryVersion ?? '(missing)'}`)
@@ -373,8 +371,8 @@ function checkHierarchyShape(): string[] {
 }
 
 function checkRepositoryVersion(): string[] {
-  // The root carries the dsh release family's version, so a prerelease such as
-  // 0.0.1-rc.1 is a valid state between `release:dsh` and its publication.
+  // The root carries the ikun release family's version, so a prerelease such as
+  // 0.0.1-rc.1 is a valid state between `release:ikun` and its publication.
   if (repositoryVersion && /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(repositoryVersion)) return []
   return ['package.json: version must be X.Y.Z with an optional prerelease segment']
 }

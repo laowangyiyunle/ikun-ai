@@ -1,8 +1,8 @@
 /** Host loader entry for the browser implementation exported from `./client`. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { settingsNamespace } from '@deepseek-ai/dsh-settings'
+import type { Context } from '@ikun-ai/cordis'
+import z from '@ikun-ai/schemastery'
+import { settingsNamespace } from '@ikun-ai/dsh-settings'
 
 /** Durable settings namespace for product-wide GUI onboarding facts. */
 const ONBOARDING_SETTINGS_NAMESPACE = 'ui-onboarding'

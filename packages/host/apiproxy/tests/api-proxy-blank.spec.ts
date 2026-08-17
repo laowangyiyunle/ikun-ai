@@ -8,20 +8,20 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import SessionStore from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import UserQuestionService from '@deepseek-ai/dsh-user-questions'
-import { CommandId } from '@deepseek-ai/dsh-commands/brand'
+import { Context } from '@ikun-ai/cordis'
+import AgentRegistry from '@ikun-ai/dsh-agent'
+import type { Agent } from '@ikun-ai/dsh-agent'
+import SessionStore from '@ikun-ai/dsh-session'
+import type { Session } from '@ikun-ai/dsh-session'
+import UserQuestionService from '@ikun-ai/dsh-user-questions'
+import { CommandId } from '@ikun-ai/dsh-commands/brand'
 // Side-effect type imports: the knob-event SessionEventMap merges.
-import type {} from '@deepseek-ai/dsh-permission-presets'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
-import type {} from '@deepseek-ai/dsh-user-approval'
-import type { ApiProxy, RpcRequest } from '@deepseek-ai/dsh-host-apiproxy/api'
-import { RpcId } from '@deepseek-ai/dsh-host-apiproxy/api/rpc'
-import { createApiProxy } from '@deepseek-ai/dsh-host-apiproxy'
+import type {} from '@ikun-ai/dsh-permission-presets'
+import type {} from '@ikun-ai/dsh-sandbox-policy'
+import type {} from '@ikun-ai/dsh-user-approval'
+import type { ApiProxy, RpcRequest } from '@ikun-ai/dsh-host-apiproxy/api'
+import { RpcId } from '@ikun-ai/dsh-host-apiproxy/api/rpc'
+import { createApiProxy } from '@ikun-ai/dsh-host-apiproxy'
 
 let nextRpc = 1
 function request<P>(payload: P): RpcRequest<P> {

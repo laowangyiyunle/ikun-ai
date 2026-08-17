@@ -1,4 +1,4 @@
-# @deepseek-ai/dsh-session-persistence
+# @ikun-ai/dsh-session-persistence
 
 [English](README.md) | 中文
 

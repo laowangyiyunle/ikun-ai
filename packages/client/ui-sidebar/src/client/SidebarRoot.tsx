@@ -20,7 +20,7 @@ import clsx from 'clsx'
 import {
   IconNewChatOutline16, IconPanelLeftOutline16,
   Tooltip,
-} from '@deepseek-ai/dsh-client-ui-primitives'
+} from '@ikun-ai/dsh-client-ui-primitives'
 import type { SidebarRootComponentProps } from './contract/slots.ts'
 import css from './SidebarRoot.module.css'
 

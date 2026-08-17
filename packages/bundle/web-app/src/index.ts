@@ -1,5 +1,5 @@
 /**
- * @deepseek-ai/dsh-web-app — the browser-surface bundle's runtime glue plugin
+ * @ikun-ai/dsh-web-app — the browser-surface bundle's runtime glue plugin
  * plus the bundle patch (`cordis.patch.yml`, declared by the `dsh.bundle.patch`
  * manifest field). The plugin owns the browser-surface glue: it resolves
  * the built frontend dist (workspace knowledge of this bundle, never user
@@ -7,20 +7,20 @@
  * harness-source and web-surface prompt sections, the bash-visible web runtime
  * variable, and the URL line. App command-line values arrive through the
  * `webStartup` service expressions in the bundle patch.
- * @module @deepseek-ai/dsh-web-app
+ * @module @ikun-ai/dsh-web-app
  */
 
 import { createRequire } from 'node:module'
 import { networkInterfaces } from 'node:os'
 import { fileURLToPath } from 'node:url'
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { addHarnessSourceSection } from '@deepseek-ai/dsh-app-boot'
-import * as FrontendStatic from '@deepseek-ai/dsh-host-frontend-static'
-import type {} from '@deepseek-ai/cordis-plugin-loader'
-import type {} from '@deepseek-ai/dsh-host-webserver'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type {} from '@deepseek-ai/dsh-shell-env'
+import type { Context } from '@ikun-ai/cordis'
+import z from '@ikun-ai/schemastery'
+import { addHarnessSourceSection } from '@ikun-ai/dsh-app-boot'
+import * as FrontendStatic from '@ikun-ai/dsh-host-frontend-static'
+import type {} from '@ikun-ai/cordis-plugin-loader'
+import type {} from '@ikun-ai/dsh-host-webserver'
+import type {} from '@ikun-ai/dsh-system-prompt'
+import type {} from '@ikun-ai/dsh-shell-env'
 
 /** Stable Cordis plugin name. */
 export const name = 'web-app'
@@ -91,7 +91,7 @@ export function resolveLanTrust(bindHost: string, extra: readonly string[]): Web
   return { lanAddresses, trustedHosts: [...lanAddresses, ...extra] }
 }
 
-/** Model-visible orientation and acceptance boundary for sessions created through `dsh web`. */
+/** Model-visible orientation and acceptance boundary for sessions created through `ikun web`. */
 function webSurfacePrompt(webUrl: string): string {
   const updateContract = 'The client-plugin HMR receiver is active, but client-plugin changes reload without a refresh only while '
     + '`pnpm run dev:web` is also running from this same checkout to rebuild their bundles; verify that watcher before promising automatic updates. '
@@ -101,7 +101,7 @@ function webSurfacePrompt(webUrl: string): string {
     + 'The browser provides no implicit DOM, route, or screenshot context. '
     + updateContract
     + 'Starting another server does not update this GUI. '
-    + 'The apps/web Vite entry builds the shell but is not a standalone application because only dsh web injects window.__DSH_BOOT__. '
+    + 'The apps/web Vite entry builds the shell but is not a standalone application because only ikun web injects window.__DSH_BOOT__. '
     + 'Do not start a replacement server unless the user asks; if one is needed, use a managed background job and verify its exact URL.'
 }
 
@@ -116,7 +116,7 @@ function localWebUrl(ctx: Context): string {
 function resolveDistIndex(): string {
   const require = createRequire(import.meta.url)
   try {
-    return require.resolve('@deepseek-ai/dsh-web-frontend/dist/index.html')
+    return require.resolve('@ikun-ai/dsh-web-frontend/dist/index.html')
   } catch {
     /* v8 ignore next 2 -- reachable only on a checkout without a built dist; the test tree builds it */
     throw new Error('web-app: frontend dist not built; run pnpm run build from the repository root first')
@@ -165,7 +165,7 @@ export function apply(ctx: Context, config: Config): void {
       // Reuse the exact LAN snapshot provided to the /api trust fence.
       const lanCandidate = runtime.lanAddresses[0]
       const port = ctx.webServer.port
-      console.log(`dsh web: ${localWebUrl(ctx)}${lanCandidate === undefined ? '' : ` (LAN: http://${lanCandidate}:${String(port)})`}`)
+      console.log(`ikun web: ${localWebUrl(ctx)}${lanCandidate === undefined ? '' : ` (LAN: http://${lanCandidate}:${String(port)})`}`)
     }
     // This row's own activation can precede a sibling failure. The app owns
     // readiness by waiting for its Loader tree, or prints at once in a

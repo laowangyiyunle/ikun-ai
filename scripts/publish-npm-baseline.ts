@@ -34,7 +34,7 @@ const DEPENDENCY_SECTIONS = [
   'peerDependencies',
 ] as const
 const RELEASE_MANIFEST_NAME = 'manifest.json'
-const RELEASE_ENTRY_PACKAGE = '@deepseek-ai/dsh'
+const RELEASE_ENTRY_PACKAGE = '@ikun-ai/ikun'
 const LATEST_DIST_TAG = 'latest'
 const POSIX_WEB_PROBE = String.raw`
 import errno, os, pty, select, signal, sys, time
@@ -62,7 +62,7 @@ while time.monotonic() < deadline:
             output.extend(chunk)
 
     snapshot = bytes(output)
-    if not termination_sent and b"dsh web: http://127.0.0.1:" in snapshot:
+    if not termination_sent and b"ikun web: http://127.0.0.1:" in snapshot:
         ready_seen = True
         os.kill(pid, signal.SIGTERM)
         termination_sent = True
@@ -77,11 +77,11 @@ if status is None:
     _, status = os.waitpid(pid, 0)
 sys.stdout.buffer.write(output)
 if not ready_seen:
-    sys.stderr.write("installed dsh web did not reach its ready URL\n")
+    sys.stderr.write("installed ikun web did not reach its ready URL\n")
     sys.exit(124)
 actual_exit = os.waitstatus_to_exitcode(status)
 if actual_exit != 0:
-    sys.stderr.write(f"installed dsh web exited {actual_exit}, expected 0\n")
+    sys.stderr.write(f"installed ikun web exited {actual_exit}, expected 0\n")
     sys.exit(125)
 `
 
@@ -209,7 +209,7 @@ class DetachedWorktree {
   ) {}
 
   static create(repositoryRoot: string, commit: string, runner: CommandRunner): DetachedWorktree {
-    const temporaryRoot = mkdtempSync(join(tmpdir(), 'dsh-npm-baseline-'))
+    const temporaryRoot = mkdtempSync(join(tmpdir(), 'ikun-npm-baseline-'))
     const path = join(temporaryRoot, 'worktree')
     try {
       runner.run('git', ['worktree', 'add', '--detach', path, commit], repositoryRoot)
@@ -260,10 +260,10 @@ class WorkspacePackageSet {
       const isVendored = manifestPath.startsWith('vendor/')
       // Vendored packages are rescoped too (vendor/README.md), so publication
       // never carries an upstream name that would squat it on the registry.
-      if (!name.startsWith('@deepseek-ai/')) {
-        throw new Error(`${manifestPath} must name an @deepseek-ai package`)
+      if (!name.startsWith('@ikun-ai/')) {
+        throw new Error(`${manifestPath} must name an @ikun-ai package`)
       }
-      if (name === '@deepseek-ai/dsh-root') {
+      if (name === '@ikun-ai/dsh-root') {
         throw new Error(`${manifestPath} unexpectedly selected the workspace root`)
       }
       if (names.has(name)) throw new Error(`duplicate package name: ${name}`)
@@ -430,14 +430,14 @@ class InstalledBundleSmoke {
   ) {}
 
   run(): void {
-    const consumerRoot = mkdtempSync(join(tmpdir(), 'dsh-npm-consumer-'))
+    const consumerRoot = mkdtempSync(join(tmpdir(), 'ikun-npm-consumer-'))
     try {
       const dependencies = Object.fromEntries(this.bundle.manifest.packages.map(pkg => [
         pkg.name,
         pathToFileURL(this.bundle.tarballPath(pkg)).href,
       ]))
       writeFileSync(resolve(consumerRoot, 'package.json'), `${JSON.stringify({
-        name: 'dsh-npm-baseline-consumer',
+        name: 'ikun-npm-baseline-consumer',
         version: '0.0.0',
         private: true,
         dependencies,
@@ -454,7 +454,7 @@ class InstalledBundleSmoke {
         `--registry=${this.bundle.manifest.registry}`,
       ], consumerRoot, npmClientEnvironment())
 
-      const bin = resolve(consumerRoot, 'node_modules/@deepseek-ai/dsh/lib/bin.js')
+      const bin = resolve(consumerRoot, 'node_modules/@ikun-ai/ikun/lib/bin.js')
       assertPathWithin(consumerRoot, bin, 'installed dsh bin')
       const environment = installedArtifactEnvironment(consumerRoot)
       const version = this.runner.capture(
@@ -465,7 +465,7 @@ class InstalledBundleSmoke {
       )
       if (version !== this.bundle.manifest.version) {
         throw new Error(
-          `installed dsh --version returned ${JSON.stringify(version)}; `
+          `installed ikun --version returned ${JSON.stringify(version)}; `
           + `expected ${this.bundle.manifest.version}`,
         )
       }
@@ -805,7 +805,7 @@ function parsePackedPackage(value: unknown, index: number): PackedPackage {
   if (origin !== 'harness' && origin !== 'vendor') {
     throw new Error(`invalid package origin in release manifest: ${JSON.stringify(origin)}`)
   }
-  if (origin === 'harness' && (!name.startsWith('@deepseek-ai/') || name === '@deepseek-ai/dsh-root')) {
+  if (origin === 'harness' && (!name.startsWith('@ikun-ai/') || name === '@ikun-ai/dsh-root')) {
     throw new Error(`invalid package name in release manifest: ${name}`)
   }
   return {

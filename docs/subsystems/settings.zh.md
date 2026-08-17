@@ -27,6 +27,14 @@ interface SettingsRegisterOptions<T> {
   /** Owner's effect timing, surfaced to configuration UIs; defaults to `live`. */
   applies?: SettingsApplies
   /**
+   * Serve this namespace to configuration clients (the Web UI's settings
+   * surfaces). A namespace absent this declaration stays process-local even
+   * when registered: the configuration boundary is the owner's decision,
+   * declared here rather than by a client-facing allowlist. Loopback-only
+   * transport still applies; this only decides visibility, not reach.
+   */
+  exposeToClients?: boolean
+  /**
    * Reject a resolved section the owner could not act on, for constraints its
    * schema cannot express — a cross-field requirement, or one field's validity
    * depending on another's. Throwing here refuses the *write* that produced the
@@ -120,6 +128,8 @@ interface SettingsDescriptor {
   user?: unknown
   /** Owner's declared effect timing. */
   applies: SettingsApplies
+  /** Owner's declaration that configuration clients may serve this namespace. */
+  exposeToClients: boolean
   /** Schema-declared secret positions; present only under `redactSecrets`. */
   secrets?: RedactedSecret[]
 }

@@ -1,13 +1,13 @@
 /**
- * Package-owned invariant companion for `@deepseek-ai/dsh-app-boot`.
- * @module @deepseek-ai/dsh-app-boot/invariant
+ * Package-owned invariant companion for `@ikun-ai/dsh-app-boot`.
+ * @module @ikun-ai/dsh-app-boot/invariant
  */
 
 /* jscpd:ignore-start */
-import type { Context } from '@deepseek-ai/cordis'
-import type { InvariantInstaller } from '@deepseek-ai/dsh-invariants'
+import type { Context } from '@ikun-ai/cordis'
+import type { InvariantInstaller } from '@ikun-ai/dsh-invariants'
 
-const PACKAGE_NAME = '@deepseek-ai/dsh-app-boot'
+const PACKAGE_NAME = '@ikun-ai/dsh-app-boot'
 
 /** Cordis companion plugin name. */
 export const name = 'app-boot-invariant'

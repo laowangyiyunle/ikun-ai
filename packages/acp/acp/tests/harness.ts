@@ -1,6 +1,6 @@
 /** In-memory ACP transport fixture over the real agent factory and loop. */
 
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@ikun-ai/cordis'
 import {
   ClientSideConnection,
   ndJsonStream,
@@ -11,9 +11,9 @@ import {
   type SessionNotification,
   type Stream,
 } from '@agentclientprotocol/sdk'
-import { type GenerateOptions, LlmAdapter, type StreamChunk } from '@deepseek-ai/dsh-llm'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { type GenerateOptions, LlmAdapter, type StreamChunk } from '@ikun-ai/dsh-llm'
+import AgentLoop from '@ikun-ai/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@ikun-ai/dsh-agent-loop-testkit'
 import * as AcpPlugin from '../src/index.ts'
 import type { AcpConfig } from '../src/index.ts'
 

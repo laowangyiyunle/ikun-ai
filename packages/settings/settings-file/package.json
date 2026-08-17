@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-settings-file",
+  "name": "@ikun-ai/dsh-settings-file",
   "description": "File-backed settings provider (settings.yaml) for the DeepSeek Harness",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/settings/settings-file"
   },
   "type": "module",
@@ -32,22 +32,22 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-atomic-write": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-home-paths": "workspace:^",
-    "@deepseek-ai/dsh-settings": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-atomic-write": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-home-paths": "workspace:^",
+    "@ikun-ai/dsh-settings": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "dependencies": {
     "chokidar": "^4.0.3",
-    "@deepseek-ai/schemastery": "workspace:^",
+    "@ikun-ai/schemastery": "workspace:^",
     "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-atomic-write": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-home-paths": "workspace:^",
-    "@deepseek-ai/dsh-settings": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-atomic-write": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-home-paths": "workspace:^",
+    "@ikun-ai/dsh-settings": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

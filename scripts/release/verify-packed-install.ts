@@ -7,7 +7,7 @@
  * verification: the harness packages declare the vendored framework as a peer,
  * those packages live in another release sequence, and this job must not depend
  * on the registry already carrying versions that match — one pull request may
- * bump both families before either publishes — so a dsh verification passes the
+ * bump both families before either publishes — so a ikun verification passes the
  * vendored family's pack output too, while publishing only its own
  * ([rationale](../../.agents/notes/implemented/process/2026-08-10-npm-release-sequences.md)).
  *
@@ -73,7 +73,7 @@ function main(): void {
     allowPositionals: false,
   })
   if (values.family === undefined || values.from === undefined || values.from.length === 0) {
-    throw new Error('usage: verify-packed-install.ts --family <dsh|vendor> --from <packed directory> [--from ...]')
+    throw new Error('usage: verify-packed-install.ts --family <ikun|vendor> --from <packed directory> [--from ...]')
   }
 
   const family = releaseFamily(values.family)
@@ -88,10 +88,10 @@ function main(): void {
   const expected = packed.get(entry.packageName)
   if (expected === undefined) throw new Error(`${entry.packageName} is not among the packed tarballs`)
 
-  const consumerRoot = mkdtempSync(join(tmpdir(), `dsh-packed-${family.id}-`))
+  const consumerRoot = mkdtempSync(join(tmpdir(), `ikun-packed-${family.id}-`))
   try {
     writeFileSync(join(consumerRoot, 'package.json'), `${JSON.stringify({
-      name: `dsh-packed-install-${family.id}`,
+      name: `ikun-packed-install-${family.id}`,
       version: '0.0.0',
       private: true,
       dependencies: Object.fromEntries([...packed].map(([name, entryPacked]) => [name, entryPacked.url])),

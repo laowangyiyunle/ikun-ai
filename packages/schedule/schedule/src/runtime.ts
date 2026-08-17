@@ -1,11 +1,11 @@
 /**
  * Disposable live timer projection for one exact root agent.
- * @module @deepseek-ai/dsh-schedule
+ * @module @ikun-ai/dsh-schedule
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
+import type { Context } from '@ikun-ai/cordis'
+import type { Agent } from '@ikun-ai/dsh-agent'
+import { createUserMessage } from '@ikun-ai/dsh-llm'
 import type { EveryScheduleRecord, OneShotScheduleRecord } from './types.ts'
 import {
   foldScheduleEvents,

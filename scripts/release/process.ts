@@ -5,6 +5,7 @@
 
 import { spawnSync } from 'node:child_process'
 import { realpathSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 /** Where and with what environment a release step runs a command. */
@@ -25,6 +26,19 @@ export interface CommandResult {
   readonly stderr: string
 }
 
+/** Select an executable and arguments that work without a shell on every supported platform. */
+function invocation(command: string, args: readonly string[]): { command: string; args: readonly string[] } {
+  if (process.platform === 'win32' && command === 'pnpm') {
+    const entry = resolve(dirname(process.execPath), 'node_modules', 'pnpm', 'bin', 'pnpm.mjs')
+    return { command: process.execPath, args: [entry, ...args] }
+  }
+  if (process.platform === 'win32' && command === 'npm') {
+    const entry = resolve(dirname(process.execPath), 'node_modules', 'npm', 'bin', 'npm-cli.js')
+    return { command: process.execPath, args: [entry, ...args] }
+  }
+  return { command, args }
+}
+
 /**
  * Run a command and capture its output without judging the exit status.
  * @param command - executable name.
@@ -33,7 +47,8 @@ export interface CommandResult {
  * @returns The exit status and captured streams.
  */
 export function attempt(command: string, args: readonly string[], options: RunOptions = {}): CommandResult {
-  const result = spawnSync(command, [...args], { cwd: options.cwd, env: options.env, encoding: 'utf8' })
+  const selected = invocation(command, args)
+  const result = spawnSync(selected.command, selected.args, { cwd: options.cwd, env: options.env, encoding: 'utf8' })
   if (result.error !== undefined) throw result.error
   return { status: result.status, stdout: result.stdout, stderr: result.stderr }
 }
@@ -61,7 +76,8 @@ export function capture(command: string, args: readonly string[], options: RunOp
  * @param options - working directory and environment.
  */
 export function run(command: string, args: readonly string[], options: RunOptions = {}): void {
-  const result = spawnSync(command, [...args], { cwd: options.cwd, env: options.env, stdio: 'inherit' })
+  const selected = invocation(command, args)
+  const result = spawnSync(selected.command, selected.args, { cwd: options.cwd, env: options.env, stdio: 'inherit' })
   if (result.error !== undefined) throw result.error
   if (result.status !== 0) throw new Error(`${command} ${args.join(' ')} exited with ${String(result.status)}`)
 }

@@ -6,15 +6,15 @@
  * Plugin lifecycle reads use the optional `ctx.fs` provider, so providerless products
  * mount it as a no-op.
  *
- * @module @deepseek-ai/dsh-agent-instructions
+ * @module @ikun-ai/dsh-agent-instructions
  */
 
-import type { Context } from '@deepseek-ai/cordis'
+import type { Context } from '@ikun-ai/cordis'
 import { isDeepStrictEqual } from 'node:util'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { Session, UserMessage } from '@deepseek-ai/dsh-session'
-import type { ToolExecution, ToolExecutionResult, ToolExecutionToken } from '@deepseek-ai/dsh-tools'
+import type { Agent, PreStepDecision } from '@ikun-ai/dsh-agent'
+import { createUserMessage } from '@ikun-ai/dsh-llm'
+import type { Session, UserMessage } from '@ikun-ai/dsh-session'
+import type { ToolExecution, ToolExecutionResult, ToolExecutionToken } from '@ikun-ai/dsh-tools'
 import { Config, resolveConfig, workspaceBaselineIdentity, type ResolvedConfig } from './config.ts'
 import { findProjectRoot, loadBaselineInstructionSet } from './files.ts'
 import {

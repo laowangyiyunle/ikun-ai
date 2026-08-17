@@ -8,7 +8,7 @@ We recommend using an agent to explore the codebase and understand its architect
 
 ## Cordis
 
-[Cordis](cordis-primer.md) is the framework under dsh: plugins contribute services, typed events, and reversible effects to a shared context. Every part of the product is a plugin, including the model adapter, the tool registry, the session log, and the agent loop itself, so every part is replaceable from configuration.
+[Cordis](cordis-primer.md) is the framework under ikun: plugins contribute services, typed events, and reversible effects to a shared context. Every part of the product is a plugin, including the model adapter, the tool registry, the session log, and the agent loop itself, so every part is replaceable from configuration.
 
 There is no privileged core to patch: you extend dsh by mounting a plugin beside the others, and registrations are effects that unwind when their plugin unloads.
 
@@ -29,7 +29,7 @@ Layers apply to an empty entry list in this order: each bundle in the profile's 
 To see the tree your machine actually boots:
 
 ```sh
-dsh --profile web --dump-config
+ikun --profile web --dump-config
 ```
 
 Any row it prints can be replaced by a patch of your own.

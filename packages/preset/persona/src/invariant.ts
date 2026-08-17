@@ -1,13 +1,13 @@
 /**
- * Package-owned invariant companion for `@deepseek-ai/dsh-persona`.
- * @module @deepseek-ai/dsh-persona/invariant
+ * Package-owned invariant companion for `@ikun-ai/dsh-persona`.
+ * @module @ikun-ai/dsh-persona/invariant
  */
 
 /* jscpd:ignore-start */
-import type { Context } from '@deepseek-ai/cordis'
-import type { InvariantInstaller } from '@deepseek-ai/dsh-invariants'
+import type { Context } from '@ikun-ai/cordis'
+import type { InvariantInstaller } from '@ikun-ai/dsh-invariants'
 
-const PACKAGE_NAME = '@deepseek-ai/dsh-persona'
+const PACKAGE_NAME = '@ikun-ai/dsh-persona'
 
 /** Cordis companion plugin name. */
 export const name = 'persona-invariant'

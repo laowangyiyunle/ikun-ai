@@ -1,4 +1,4 @@
-# @deepseek-ai/dsh-session-title-llm
+# @ikun-ai/dsh-session-title-llm
 
 [English](README.md) | 中文
 

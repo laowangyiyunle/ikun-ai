@@ -1,4 +1,4 @@
-# @deepseek-ai/dsh-typert-loader
+# @ikun-ai/dsh-typert-loader
 
 English | [中文](README.zh.md)
 

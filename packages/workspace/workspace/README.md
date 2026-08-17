@@ -1,4 +1,4 @@
-# @deepseek-ai/dsh-workspace
+# @ikun-ai/dsh-workspace
 
 English | [中文](README.zh.md)
 
