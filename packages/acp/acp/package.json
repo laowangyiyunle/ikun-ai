@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-acp",
+  "name": "@ikun-ai/dsh-acp",
   "description": "Automation-only Agent Client Protocol server for driving DeepSeek Harness agents over JSON-RPC stdio",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/acp/acp"
   },
   "type": "module",
@@ -33,24 +33,24 @@
   "license": "MIT",
   "dependencies": {
     "@agentclientprotocol/sdk": "0.25.1",
-    "@deepseek-ai/schemastery": "workspace:^"
+    "@ikun-ai/schemastery": "workspace:^"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-session": "workspace:^",
-    "@deepseek-ai/dsh-user-approval": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-agent": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-session": "workspace:^",
+    "@ikun-ai/dsh-user-approval": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:^",
-    "@deepseek-ai/dsh-agent-loop": "workspace:^",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-session": "workspace:^",
-    "@deepseek-ai/dsh-tools": "workspace:^",
-    "@deepseek-ai/dsh-user-approval": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-agent": "workspace:^",
+    "@ikun-ai/dsh-agent-loop": "workspace:^",
+    "@ikun-ai/dsh-agent-loop-testkit": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-session": "workspace:^",
+    "@ikun-ai/dsh-tools": "workspace:^",
+    "@ikun-ai/dsh-user-approval": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

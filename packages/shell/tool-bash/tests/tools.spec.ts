@@ -2,25 +2,25 @@ import { mkdtempSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { CallId } from '@deepseek-ai/dsh-llm'
-import { ShellExecutor } from '@deepseek-ai/dsh-shell'
-import type { ShellExecRequest, ShellExecSpec, ShellProcess, ShellProcessRead, ShellRunResult } from '@deepseek-ai/dsh-shell'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { TOOL_ABORTED, TOOL_ABORTED_BEFORE_DISPATCH } from '@deepseek-ai/dsh-tools'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import SessionStore, { SessionId } from '@deepseek-ai/dsh-session'
-import JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import LocalJobRegistry from '@deepseek-ai/dsh-jobs-local'
-import * as ToolTasks from '@deepseek-ai/dsh-tool-jobs'
-import ApprovalService from '@deepseek-ai/dsh-user-approval'
-import type { ApprovalOutcome } from '@deepseek-ai/dsh-user-approval'
-import { LocalBashExecutor } from '@deepseek-ai/dsh-bash-local'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import * as ToolBash from '@deepseek-ai/dsh-tool-bash'
-import * as BashEnvPlugin from '@deepseek-ai/dsh-shell-env'
+import { Context } from '@ikun-ai/cordis'
+import { CallId } from '@ikun-ai/dsh-llm'
+import { ShellExecutor } from '@ikun-ai/dsh-shell'
+import type { ShellExecRequest, ShellExecSpec, ShellProcess, ShellProcessRead, ShellRunResult } from '@ikun-ai/dsh-shell'
+import SystemPrompt from '@ikun-ai/dsh-system-prompt'
+import ToolRuntime, { TOOL_ABORTED, TOOL_ABORTED_BEFORE_DISPATCH } from '@ikun-ai/dsh-tools'
+import AgentRegistry from '@ikun-ai/dsh-agent'
+import type { Agent } from '@ikun-ai/dsh-agent'
+import SessionStore, { SessionId } from '@ikun-ai/dsh-session'
+import JsonlSessionPersistence from '@ikun-ai/dsh-session-persistence-jsonl'
+import LocalJobRegistry from '@ikun-ai/dsh-jobs-local'
+import * as ToolTasks from '@ikun-ai/dsh-tool-jobs'
+import ApprovalService from '@ikun-ai/dsh-user-approval'
+import type { ApprovalOutcome } from '@ikun-ai/dsh-user-approval'
+import { LocalBashExecutor } from '@ikun-ai/dsh-bash-local'
+import LocalSubprocessRuntime from '@ikun-ai/dsh-subprocess-local'
+import SandboxPolicyService from '@ikun-ai/dsh-sandbox-policy'
+import * as ToolBash from '@ikun-ai/dsh-tool-bash'
+import * as BashEnvPlugin from '@ikun-ai/dsh-shell-env'
 import { processOutcome } from '../src/background.ts'
 import { renderProcessRead, renderResult } from '../src/render.ts'
 
@@ -492,7 +492,7 @@ describe('background execution through the job runtime', () => {
     const ctx = await setup() // no LocalJobRegistry / ToolTasks
     const result = await call(ctx, 'bash', { command: 'sleep 60', description: 'test command', run_in_background: true })
     expect(result.isError).toBe(true)
-    expect(text(result)).toContain('background jobs unavailable: load @deepseek-ai/dsh-jobs and @deepseek-ai/dsh-tool-jobs')
+    expect(text(result)).toContain('background jobs unavailable: load @ikun-ai/dsh-jobs and @ikun-ai/dsh-tool-jobs')
   })
 
   it('a pre-aborted call is skipped before the process starts', async () => {

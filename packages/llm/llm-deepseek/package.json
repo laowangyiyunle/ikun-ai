@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-llm-deepseek",
+  "name": "@ikun-ai/dsh-llm-deepseek",
   "description": "DeepSeek chat-completions adapter for the DeepSeek Harness LLM seam",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/llm/llm-deepseek"
   },
   "type": "module",
@@ -32,27 +32,27 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-credentials": "workspace:^",
-    "@deepseek-ai/dsh-launch-environment": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-settings": "workspace:^",
-    "@deepseek-ai/dsh-timeout": "workspace:^",
-    "@deepseek-ai/dsh-anonymous-user-id": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-credentials": "workspace:^",
+    "@ikun-ai/dsh-launch-environment": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-settings": "workspace:^",
+    "@ikun-ai/dsh-timeout": "workspace:^",
+    "@ikun-ai/dsh-anonymous-user-id": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "dependencies": {
     "eventsource-parser": "^3.1.0",
-    "@deepseek-ai/schemastery": "workspace:^"
+    "@ikun-ai/schemastery": "workspace:^"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-credentials": "workspace:^",
-    "@deepseek-ai/dsh-launch-environment": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-settings": "workspace:^",
-    "@deepseek-ai/dsh-timeout": "workspace:^",
-    "@deepseek-ai/dsh-anonymous-user-id": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-credentials": "workspace:^",
+    "@ikun-ai/dsh-launch-environment": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-settings": "workspace:^",
+    "@ikun-ai/dsh-timeout": "workspace:^",
+    "@ikun-ai/dsh-anonymous-user-id": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

@@ -5,25 +5,25 @@
  *
  * TODO(permissions): deployment policy belongs in `tools/pre-execute` and
  * sandboxing executors; see docs/architecture.md § Where new behavior goes.
- * @module @deepseek-ai/dsh-tool-bash
+ * @module @ikun-ai/dsh-tool-bash
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
+import type { Context } from '@ikun-ai/cordis'
+import z from '@ikun-ai/schemastery'
 import { isAbsolute, resolve as resolvePath } from 'node:path'
-import { defineTool, TOOL_ABORTED } from '@deepseek-ai/dsh-tools'
-import type { GenericCallView, TerminalCallView, ToolExecution, ToolResult, ToolResultView } from '@deepseek-ai/dsh-tools'
-import { HarnessError } from '@deepseek-ai/dsh-llm'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type {} from '@deepseek-ai/dsh-jobs'
-import type {} from '@deepseek-ai/dsh-user-approval'
-import type {} from '@deepseek-ai/dsh-shell-env'
-import type { SandboxExecutionPolicy, SandboxMode } from '@deepseek-ai/dsh-sandbox'
-import { ESCALATION_TARGETS, approveEscalation, canonicalPath, validateEscalationArgs } from '@deepseek-ai/dsh-sandbox'
-import type { SandboxPolicyService } from '@deepseek-ai/dsh-sandbox-policy'
-import { DSH_ENV_PREFIX } from '@deepseek-ai/dsh-shell'
-import type { ShellRunResult } from '@deepseek-ai/dsh-shell'
+import { defineTool, TOOL_ABORTED } from '@ikun-ai/dsh-tools'
+import type { GenericCallView, TerminalCallView, ToolExecution, ToolResult, ToolResultView } from '@ikun-ai/dsh-tools'
+import { HarnessError } from '@ikun-ai/dsh-llm'
+import type { Agent } from '@ikun-ai/dsh-agent'
+import type {} from '@ikun-ai/dsh-system-prompt'
+import type {} from '@ikun-ai/dsh-jobs'
+import type {} from '@ikun-ai/dsh-user-approval'
+import type {} from '@ikun-ai/dsh-shell-env'
+import type { SandboxExecutionPolicy, SandboxMode } from '@ikun-ai/dsh-sandbox'
+import { ESCALATION_TARGETS, approveEscalation, canonicalPath, validateEscalationArgs } from '@ikun-ai/dsh-sandbox'
+import type { SandboxPolicyService } from '@ikun-ai/dsh-sandbox-policy'
+import { DSH_ENV_PREFIX } from '@ikun-ai/dsh-shell'
+import type { ShellRunResult } from '@ikun-ai/dsh-shell'
 import { processOutcome } from './background.ts'
 import { parseExitStatus, renderProcessRead, renderResult } from './render.ts'
 
@@ -353,7 +353,7 @@ export function apply(ctx: Context, config: Config = {}): void {
         }
         const jobs = ctx.get('jobs')
         if (jobs === undefined) {
-          throw new Error('background jobs unavailable: load @deepseek-ai/dsh-jobs and @deepseek-ai/dsh-tool-jobs')
+          throw new Error('background jobs unavailable: load @ikun-ai/dsh-jobs and @ikun-ai/dsh-tool-jobs')
         }
         // The caller owns cancellation until ctx.jobs commits detached ownership.
         if (exec.signal.aborted) {

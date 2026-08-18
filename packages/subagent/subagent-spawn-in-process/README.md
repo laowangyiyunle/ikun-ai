@@ -1,4 +1,4 @@
-# @deepseek-ai/dsh-subagent-spawn-in-process
+# @ikun-ai/dsh-subagent-spawn-in-process
 
 English | [中文](README.zh.md)
 

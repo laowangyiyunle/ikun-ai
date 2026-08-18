@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-e2b",
+  "name": "@ikun-ai/dsh-e2b",
   "description": "Shared E2B sandbox lifecycle for DeepSeek Harness provider adapters",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/e2b/e2b"
   },
   "type": "module",
@@ -32,17 +32,17 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "dependencies": {
     "e2b": "2.29.1",
-    "@deepseek-ai/schemastery": "workspace:^"
+    "@ikun-ai/schemastery": "workspace:^"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-loader-smoke": "workspace:^",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-loader-smoke": "workspace:^",
+    "@ikun-ai/dsh-sandbox-policy": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

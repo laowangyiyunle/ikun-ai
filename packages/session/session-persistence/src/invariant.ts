@@ -1,13 +1,13 @@
 /**
- * Package-owned invariant companion for `@deepseek-ai/dsh-session-persistence`.
- * @module @deepseek-ai/dsh-session-persistence/invariant
+ * Package-owned invariant companion for `@ikun-ai/dsh-session-persistence`.
+ * @module @ikun-ai/dsh-session-persistence/invariant
  */
 
 /* jscpd:ignore-start */
-import type { Context } from '@deepseek-ai/cordis'
-import type { InvariantInstaller } from '@deepseek-ai/dsh-invariants'
+import type { Context } from '@ikun-ai/cordis'
+import type { InvariantInstaller } from '@ikun-ai/dsh-invariants'
 
-const PACKAGE_NAME = '@deepseek-ai/dsh-session-persistence'
+const PACKAGE_NAME = '@ikun-ai/dsh-session-persistence'
 
 /** Cordis companion plugin name. */
 export const name = 'session-persistence-invariant'

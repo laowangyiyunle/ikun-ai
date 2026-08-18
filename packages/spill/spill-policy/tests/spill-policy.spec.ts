@@ -9,19 +9,19 @@
  */
 
 import { describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import { createUserMessage, CallId } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { defineContentToolFixture } from '@deepseek-ai/dsh-tools'
-import type { ToolDefinition } from '@deepseek-ai/dsh-tools'
-import type { PostToolDecision, ToolExecution, ToolExecutionToken } from '@deepseek-ai/dsh-tools'
-import { SpillLocator, SpillStore } from '@deepseek-ai/dsh-spill'
-import type { SaveTextSpill, SpillRef } from '@deepseek-ai/dsh-spill'
-import * as SpillPolicy from '@deepseek-ai/dsh-spill-policy'
-import { WorkerThreadCodeRuntime } from '@deepseek-ai/dsh-code-runtime-worker-thread'
+import { Context } from '@ikun-ai/cordis'
+import Loader from '@ikun-ai/cordis-plugin-loader'
+import { createUserMessage, CallId } from '@ikun-ai/dsh-llm'
+import type { ContentBlock } from '@ikun-ai/dsh-llm'
+import { SessionId } from '@ikun-ai/dsh-session'
+import SystemPrompt from '@ikun-ai/dsh-system-prompt'
+import ToolRuntime, { defineContentToolFixture } from '@ikun-ai/dsh-tools'
+import type { ToolDefinition } from '@ikun-ai/dsh-tools'
+import type { PostToolDecision, ToolExecution, ToolExecutionToken } from '@ikun-ai/dsh-tools'
+import { SpillLocator, SpillStore } from '@ikun-ai/dsh-spill'
+import type { SaveTextSpill, SpillRef } from '@ikun-ai/dsh-spill'
+import * as SpillPolicy from '@ikun-ai/dsh-spill-policy'
+import { WorkerThreadCodeRuntime } from '@ikun-ai/dsh-code-runtime-worker-thread'
 
 const testToolSignal = new AbortController().signal
 

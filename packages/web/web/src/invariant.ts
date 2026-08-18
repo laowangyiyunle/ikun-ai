@@ -1,13 +1,13 @@
 /**
- * Package-owned invariant companion for `@deepseek-ai/dsh-web`.
- * @module @deepseek-ai/dsh-web/invariant
+ * Package-owned invariant companion for `@ikun-ai/dsh-web`.
+ * @module @ikun-ai/dsh-web/invariant
  */
 
 /* jscpd:ignore-start */
-import type { Context } from '@deepseek-ai/cordis'
-import type { InvariantInstaller } from '@deepseek-ai/dsh-invariants'
+import type { Context } from '@ikun-ai/cordis'
+import type { InvariantInstaller } from '@ikun-ai/dsh-invariants'
 
-const PACKAGE_NAME = '@deepseek-ai/dsh-web'
+const PACKAGE_NAME = '@ikun-ai/dsh-web'
 
 /** Cordis companion plugin name. */
 export const name = 'web-invariant'

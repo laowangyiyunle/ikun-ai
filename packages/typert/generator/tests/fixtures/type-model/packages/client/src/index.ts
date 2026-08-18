@@ -1,4 +1,4 @@
-import { Service } from '@deepseek-ai/cordis'
+import { Service } from '@ikun-ai/cordis'
 import type HostDefault from '@fixture/host'
 import type * as Host from '@fixture/host'
 import type { AgentPhase } from '@fixture/host'
@@ -30,7 +30,7 @@ export class ClientBridge extends Service {
   }
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@ikun-ai/cordis' {
   interface Context {
     clientBridge: ClientBridge
   }

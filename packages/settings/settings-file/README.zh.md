@@ -1,4 +1,4 @@
-# @deepseek-ai/dsh-settings-file
+# @ikun-ai/dsh-settings-file
 
 [English](README.md) | 中文
 

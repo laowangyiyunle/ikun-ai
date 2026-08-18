@@ -1,21 +1,21 @@
 import { describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import LlmRuntime, { createUserMessage, CallId  } from '@deepseek-ai/dsh-llm'
+import { Context } from '@ikun-ai/cordis'
+import LlmRuntime, { createUserMessage, CallId  } from '@ikun-ai/dsh-llm'
 import SessionStore, {
   SessionId,
   type SessionEvent,
   type TurnEndReason,
   type UserMessage,
-} from '@deepseek-ai/dsh-session'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { defineContentToolFixture, type PostToolDecision, type PreToolDecision } from '@deepseek-ai/dsh-tools'
+} from '@ikun-ai/dsh-session'
+import SystemPrompt from '@ikun-ai/dsh-system-prompt'
+import ToolRuntime, { defineContentToolFixture, type PostToolDecision, type PreToolDecision } from '@ikun-ai/dsh-tools'
 import AgentRegistry, {
   type Agent,
   type PreStepDecision,
   type SessionStartSource,
-} from '@deepseek-ai/dsh-agent'
+} from '@ikun-ai/dsh-agent'
 
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
+import AgentLoop from '@ikun-ai/dsh-agent-loop'
 import { MockAdapter, textResponse, toolCallResponse } from './mock-adapter.ts'
 
 /**

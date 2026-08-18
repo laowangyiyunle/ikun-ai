@@ -1,12 +1,12 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { Session, SessionId } from '@deepseek-ai/dsh-session'
-import AgentRegistry, { agentEvents, Inbox, type Agent } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import { ShellExecutor } from '@deepseek-ai/dsh-shell'
-import type { ShellExecRequest, ShellExecSpec, ShellProcess, ShellRunResult } from '@deepseek-ai/dsh-shell'
-import * as tmuxContext from '@deepseek-ai/dsh-tmux-context'
-import type { Config } from '@deepseek-ai/dsh-tmux-context'
+import { Context } from '@ikun-ai/cordis'
+import { Session, SessionId } from '@ikun-ai/dsh-session'
+import AgentRegistry, { agentEvents, Inbox, type Agent } from '@ikun-ai/dsh-agent'
+import { createUserMessage } from '@ikun-ai/dsh-llm'
+import { ShellExecutor } from '@ikun-ai/dsh-shell'
+import type { ShellExecRequest, ShellExecSpec, ShellProcess, ShellRunResult } from '@ikun-ai/dsh-shell'
+import * as tmuxContext from '@ikun-ai/dsh-tmux-context'
+import type { Config } from '@ikun-ai/dsh-tmux-context'
 
 const SIGNAL = new AbortController().signal
 

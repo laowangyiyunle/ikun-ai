@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/feature/2026-07-19-model-facing-goal-tools.md
-2026-07-19-model-facing-goal-tools.md: 2f2a1c2319dec96df9da83efbe92f1149001b8f2
-2026-07-19-model-facing-goal-tools.zh.md: 84d3ef7dc86b645a1f2f21260601c0014d242b1f
+2026-07-19-model-facing-goal-tools.md: d1f32fef3d4ddfbd229cb5a948d72a107b13cef6
+2026-07-19-model-facing-goal-tools.zh.md: 027a13c27c9d5c8abef8c3c60dd679558cf40e05

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-session-title",
+  "name": "@ikun-ai/dsh-session-title",
   "description": "Log-backed session title service and provider registry for the DeepSeek Harness",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/session/session-title"
   },
   "type": "module",
@@ -41,25 +41,25 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-session": "workspace:^",
-    "@deepseek-ai/dsh-session-projection": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-brand": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-session": "workspace:^",
+    "@ikun-ai/dsh-session-projection": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:^",
+    "@ikun-ai/schemastery": "workspace:^",
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-session": "workspace:^",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:^",
-    "@deepseek-ai/dsh-session-persistence-sqlite": "workspace:^",
-    "@deepseek-ai/dsh-session-projection": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-brand": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-session": "workspace:^",
+    "@ikun-ai/dsh-session-persistence-jsonl": "workspace:^",
+    "@ikun-ai/dsh-session-persistence-sqlite": "workspace:^",
+    "@ikun-ai/dsh-session-projection": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

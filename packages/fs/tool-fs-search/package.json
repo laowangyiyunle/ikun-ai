@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tool-fs-search",
+  "name": "@ikun-ai/dsh-tool-fs-search",
   "description": "Model-facing filesystem discovery tools (glob, grep) backed by the packaged ripgrep binary (@vscode/ripgrep)",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/fs/tool-fs-search"
   },
   "type": "module",
@@ -33,32 +33,32 @@
   "license": "MIT",
   "dependencies": {
     "@vscode/ripgrep": "^1.18.0",
-    "@deepseek-ai/schemastery": "workspace:^"
+    "@ikun-ai/schemastery": "workspace:^"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-output-retention": "workspace:^",
-    "@deepseek-ai/dsh-session": "workspace:^",
-    "@deepseek-ai/dsh-spill": "workspace:^",
-    "@deepseek-ai/dsh-subprocess": "workspace:^",
-    "@deepseek-ai/dsh-system-prompt": "workspace:^",
-    "@deepseek-ai/dsh-timeout": "workspace:^",
-    "@deepseek-ai/dsh-tools": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-output-retention": "workspace:^",
+    "@ikun-ai/dsh-session": "workspace:^",
+    "@ikun-ai/dsh-spill": "workspace:^",
+    "@ikun-ai/dsh-subprocess": "workspace:^",
+    "@ikun-ai/dsh-system-prompt": "workspace:^",
+    "@ikun-ai/dsh-timeout": "workspace:^",
+    "@ikun-ai/dsh-tools": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:^",
-    "@deepseek-ai/dsh-subprocess": "workspace:^",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-output-retention": "workspace:^",
-    "@deepseek-ai/dsh-session": "workspace:^",
-    "@deepseek-ai/dsh-spill": "workspace:^",
-    "@deepseek-ai/dsh-system-prompt": "workspace:^",
-    "@deepseek-ai/dsh-timeout": "workspace:^",
-    "@deepseek-ai/dsh-tools": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-agent": "workspace:^",
+    "@ikun-ai/dsh-subprocess": "workspace:^",
+    "@ikun-ai/dsh-subprocess-local": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-output-retention": "workspace:^",
+    "@ikun-ai/dsh-session": "workspace:^",
+    "@ikun-ai/dsh-spill": "workspace:^",
+    "@ikun-ai/dsh-system-prompt": "workspace:^",
+    "@ikun-ai/dsh-timeout": "workspace:^",
+    "@ikun-ai/dsh-tools": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

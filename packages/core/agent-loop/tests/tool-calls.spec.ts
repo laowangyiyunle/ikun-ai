@@ -4,17 +4,17 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { createUserMessage, CallId, StreamChunk  } from '@deepseek-ai/dsh-llm'
-import SessionStore, { SessionEvent, SessionId } from '@deepseek-ai/dsh-session'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import ToolRuntime, { defineContentToolFixture, TOOL_ABORTED_BEFORE_DISPATCH, TOOL_RUNTIME_SCHEDULER, type PostToolDecision, type PreToolDecision } from '@deepseek-ai/dsh-tools'
-import AgentRegistry, { type Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop, { DEFAULT_MAX_PARALLEL_TOOL_CALLS } from '@deepseek-ai/dsh-agent-loop'
+import { Context } from '@ikun-ai/cordis'
+import { createUserMessage, CallId, StreamChunk  } from '@ikun-ai/dsh-llm'
+import SessionStore, { SessionEvent, SessionId } from '@ikun-ai/dsh-session'
+import SystemPrompt from '@ikun-ai/dsh-system-prompt'
+import LlmRuntime from '@ikun-ai/dsh-llm'
+import ToolRuntime, { defineContentToolFixture, TOOL_ABORTED_BEFORE_DISPATCH, TOOL_RUNTIME_SCHEDULER, type PostToolDecision, type PreToolDecision } from '@ikun-ai/dsh-tools'
+import AgentRegistry, { type Agent } from '@ikun-ai/dsh-agent'
+import AgentLoop, { DEFAULT_MAX_PARALLEL_TOOL_CALLS } from '@ikun-ai/dsh-agent-loop'
 import { MockAdapter, textResponse } from './mock-adapter.ts'
-import { CodeRuntime } from '@deepseek-ai/dsh-code-runtime'
-import type { CodeRunRequest, CodeRunResult } from '@deepseek-ai/dsh-code-runtime'
+import { CodeRuntime } from '@ikun-ai/dsh-code-runtime'
+import type { CodeRunRequest, CodeRunResult } from '@ikun-ai/dsh-code-runtime'
 
 async function harness(adapter: MockAdapter, maxParallelToolCalls?: number) {
   const ctx = new Context()

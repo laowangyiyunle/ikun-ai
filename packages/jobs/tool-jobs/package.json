@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tool-jobs",
+  "name": "@ikun-ai/dsh-tool-jobs",
   "description": "Model-facing background job control tools (job_output, job_list, job_kill) over the ctx.jobs registry",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/jobs/tool-jobs"
   },
   "type": "module",
@@ -32,28 +32,28 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:^"
+    "@ikun-ai/schemastery": "workspace:^"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-output-retention": "workspace:^",
-    "@deepseek-ai/dsh-system-prompt": "workspace:^",
-    "@deepseek-ai/dsh-jobs": "workspace:^",
-    "@deepseek-ai/dsh-tools": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-agent": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-output-retention": "workspace:^",
+    "@ikun-ai/dsh-system-prompt": "workspace:^",
+    "@ikun-ai/dsh-jobs": "workspace:^",
+    "@ikun-ai/dsh-tools": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-output-retention": "workspace:^",
-    "@deepseek-ai/dsh-session": "workspace:^",
-    "@deepseek-ai/dsh-system-prompt": "workspace:^",
-    "@deepseek-ai/dsh-jobs": "workspace:^",
-    "@deepseek-ai/dsh-jobs-local": "workspace:^",
-    "@deepseek-ai/dsh-tools": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-agent": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-output-retention": "workspace:^",
+    "@ikun-ai/dsh-session": "workspace:^",
+    "@ikun-ai/dsh-system-prompt": "workspace:^",
+    "@ikun-ai/dsh-jobs": "workspace:^",
+    "@ikun-ai/dsh-jobs-local": "workspace:^",
+    "@ikun-ai/dsh-tools": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

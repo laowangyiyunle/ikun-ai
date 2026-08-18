@@ -1,12 +1,12 @@
 import { describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@ikun-ai/cordis'
 import TurndownService from 'turndown'
-import { CallId } from '@deepseek-ai/dsh-llm'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { type ToolExecutionResult } from '@deepseek-ai/dsh-tools'
-import WebRuntime from '@deepseek-ai/dsh-web'
-import type { WebSearchProvider, WebSearchResult } from '@deepseek-ai/dsh-web'
-import * as ToolWeb from '@deepseek-ai/dsh-tool-web'
+import { CallId } from '@ikun-ai/dsh-llm'
+import SystemPrompt from '@ikun-ai/dsh-system-prompt'
+import ToolRuntime, { type ToolExecutionResult } from '@ikun-ai/dsh-tools'
+import WebRuntime from '@ikun-ai/dsh-web'
+import type { WebSearchProvider, WebSearchResult } from '@ikun-ai/dsh-web'
+import * as ToolWeb from '@ikun-ai/dsh-tool-web'
 import {
   formatSearchOutput,
   formatFetchOutput,
@@ -21,9 +21,9 @@ import {
   fetchMetaFromValue,
   fetchMetaFromResult,
   WEB_SEARCH_MAX_RESULTS,
-} from '@deepseek-ai/dsh-tool-web'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import type { ToolResult } from '@deepseek-ai/dsh-tools'
+} from '@ikun-ai/dsh-tool-web'
+import type { ContentBlock } from '@ikun-ai/dsh-llm'
+import type { ToolResult } from '@ikun-ai/dsh-tools'
 
 const testToolSignal = new AbortController().signal
 
@@ -38,7 +38,7 @@ async function mountTools(opts: {
   config?: ToolWeb.Config
   webConfig?: ConstructorParameters<typeof WebRuntime>[1]
   search?: WebSearchProvider
-  fetchProvider?: import('@deepseek-ai/dsh-web').WebFetchProvider
+  fetchProvider?: import('@ikun-ai/dsh-web').WebFetchProvider
 } = {}): Promise<{ ctx: Context; fiber: Awaited<ReturnType<Context['plugin']>>; call: (name: string, args: unknown) => Promise<ToolExecutionResult> }> {
   const ctx = new Context()
   await ctx.plugin(SystemPrompt)

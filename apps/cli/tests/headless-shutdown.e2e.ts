@@ -4,7 +4,7 @@ import { join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { execa } from 'execa'
 import { describe, expect, it } from 'vitest'
-import { LOADER_SMOKE_TEST_TIMEOUT_MS, resolveExampleLaunch } from '@deepseek-ai/dsh-loader-smoke'
+import { LOADER_SMOKE_TEST_TIMEOUT_MS, resolveExampleLaunch } from '@ikun-ai/dsh-loader-smoke'
 
 const dshBinScript = fileURLToPath(new URL('../src/bin.ts', import.meta.url))
 const tsconfigPath = fileURLToPath(new URL('../../../tsconfig.json', import.meta.url))
@@ -73,7 +73,7 @@ async function runHeadlessPtySmoke(): Promise<string> {
       name: 'dsh-profile-headless',
       private: true,
       dependencies: {},
-      dsh: { profile: { bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-headless'] } },
+      dsh: { profile: { bundles: ['@ikun-ai/dsh-base', '@ikun-ai/dsh-headless'] } },
     }, undefined, 2))
     await writeFile(join(profileDir, 'cordis.patch.yml'), [
       '- insert:',
@@ -124,7 +124,7 @@ async function runHeadlessPtySmoke(): Promise<string> {
 describe.skipIf(process.platform === 'win32')('headless process shutdown (real Loader tree in a PTY)', () => {
   it('lets a second Ctrl+C force exit while the first signal is draining', async () => {
     const output = await runHeadlessPtySmoke()
-    expect(output).not.toContain('dsh: observing at ')
+    expect(output).not.toContain('ikun: observing at ')
     expect(output).toContain('dsh-test: never-dispose ready')
     expect(output).toContain('dsh-test: never-dispose started')
   }, LOADER_SMOKE_TEST_TIMEOUT_MS)

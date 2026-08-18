@@ -1,4 +1,4 @@
-# @deepseek-ai/dsh-llm-replay
+# @ikun-ai/dsh-llm-replay
 
 English | [中文](README.zh.md)
 
@@ -34,7 +34,7 @@ Replay keys every call by its calling session id (`GenerateOptions.sessionId`, s
 
 ```yaml
 - id: llm-replay
-  name: '@deepseek-ai/dsh-llm-replay'
+  name: '@ikun-ai/dsh-llm-replay'
   config:
     providers:
       - id: deepseek-official

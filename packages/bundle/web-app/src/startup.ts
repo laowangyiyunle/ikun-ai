@@ -1,14 +1,14 @@
 /**
- * The web app's command-line provider: it parses the `dsh --profile web` flag
+ * The web app's command-line provider: it parses the `ikun --profile web` flag
  * family (`--host`, `--port`, `--trusted-host`) and its `--help`
  * text, then provides the immutable values as {@link WEB_STARTUP_SERVICE}.
  * Ordinary rows inject that service before reading it from lazy config.
- * @module @deepseek-ai/dsh-web-app/startup
+ * @module @ikun-ai/dsh-web-app/startup
  */
 
 import { Command } from 'commander'
-import type { Context } from '@deepseek-ai/cordis'
-import { parseCmdline } from '@deepseek-ai/dsh-cmdline'
+import type { Context } from '@ikun-ai/cordis'
+import { parseCmdline } from '@ikun-ai/dsh-cmdline'
 
 /** Stable Cordis plugin name. */
 export const name = 'web-startup'
@@ -42,7 +42,7 @@ interface WebOptions {
  */
 function webCommand(): Command {
   return new Command()
-    .name('dsh --profile web')
+    .name('ikun --profile web')
     .description('Serve the DeepSeek Harness browser UI.')
     .helpOption('-h, --help', 'show this help')
     .option('--host <host>', 'bind host')
@@ -50,8 +50,8 @@ function webCommand(): Command {
     .option('--trusted-host <authority...>', 'extra authority the /api browser-trust fence accepts (host or host:port; repeatable)')
     .addHelpText('after', `
 Examples:
-  dsh --profile web                          serve on the composed host and port
-  dsh --profile web --port 8080              serve on another port
+  ikun --profile web                          serve on the composed host and port
+  ikun --profile web --port 8080              serve on another port
 `)
 }
 

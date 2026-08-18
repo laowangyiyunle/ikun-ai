@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tool-todo",
+  "name": "@ikun-ai/dsh-tool-todo",
   "description": "Model-facing todo_write tool over the DeepSeek Harness event-sourced session log",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/todo/tool-todo"
   },
   "type": "module",
@@ -37,31 +37,31 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:^",
+    "@ikun-ai/schemastery": "workspace:^",
     "zod": "^4.4.3"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-session": "workspace:^",
-    "@deepseek-ai/dsh-session-projection": "workspace:^",
-    "@deepseek-ai/dsh-tools": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-agent": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-session": "workspace:^",
+    "@ikun-ai/dsh-session-projection": "workspace:^",
+    "@ikun-ai/dsh-tools": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis-plugin-include": "workspace:^",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:^",
-    "@deepseek-ai/dsh-agent": "workspace:^",
-    "@deepseek-ai/dsh-agent-loop": "workspace:^",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:^",
-    "@deepseek-ai/dsh-host-apiproxy": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-session": "workspace:^",
-    "@deepseek-ai/dsh-session-projection": "workspace:^",
-    "@deepseek-ai/dsh-system-prompt": "workspace:^",
-    "@deepseek-ai/dsh-tools": "workspace:^",
-    "@deepseek-ai/dsh-user-questions": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/cordis-plugin-include": "workspace:^",
+    "@ikun-ai/cordis-plugin-loader": "workspace:^",
+    "@ikun-ai/dsh-agent": "workspace:^",
+    "@ikun-ai/dsh-agent-loop": "workspace:^",
+    "@ikun-ai/dsh-agent-loop-testkit": "workspace:^",
+    "@ikun-ai/dsh-host-apiproxy": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-session": "workspace:^",
+    "@ikun-ai/dsh-session-projection": "workspace:^",
+    "@ikun-ai/dsh-system-prompt": "workspace:^",
+    "@ikun-ai/dsh-tools": "workspace:^",
+    "@ikun-ai/dsh-user-questions": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

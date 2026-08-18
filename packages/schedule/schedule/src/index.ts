@@ -1,11 +1,11 @@
 /**
  * Agent-scoped durable one-shot and fixed-rate reminders over the session event log.
- * @module @deepseek-ai/dsh-schedule
+ * @module @ikun-ai/dsh-schedule
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-session-persistence'
+import type { Context } from '@ikun-ai/cordis'
+import type { Agent } from '@ikun-ai/dsh-agent'
+import type {} from '@ikun-ai/dsh-session-persistence'
 import { ScheduleRuntime } from './runtime.ts'
 import { registerScheduleTools } from './tools.ts'
 

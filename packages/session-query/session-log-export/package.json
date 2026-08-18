@@ -1,11 +1,11 @@
 {
-  "name": "@deepseek-ai/dsh-session-log-export",
+  "name": "@ikun-ai/dsh-session-log-export",
   "description": "Web Session-log export command and shared download dialog",
   "version": "0.1.0-rc.5",
   "publishConfig": { "access": "public" },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/session-query/session-log-export"
   },
   "type": "module",
@@ -22,40 +22,40 @@
   "scripts": { "bundle": "tsdown", "watch": "tsdown --watch" },
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:^",
-    "@deepseek-ai/dsh-client-locale": "workspace:^",
-    "@deepseek-ai/dsh-client-runtime": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-commands": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-conversation": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:^",
-    "@deepseek-ai/dsh-commands": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^",
+    "@ikun-ai/dsh-client-locale": "workspace:^",
+    "@ikun-ai/dsh-client-runtime": "workspace:^",
+    "@ikun-ai/dsh-client-ui-commands": "workspace:^",
+    "@ikun-ai/dsh-client-ui-conversation": "workspace:^",
+    "@ikun-ai/dsh-client-ui-primitives": "workspace:^",
+    "@ikun-ai/dsh-client-ui-slots": "workspace:^",
+    "@ikun-ai/dsh-commands": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:^",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:^",
-    "@deepseek-ai/dsh-agent": "workspace:^",
-    "@deepseek-ai/dsh-client-locale": "workspace:^",
-    "@deepseek-ai/dsh-client-runtime": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-commands": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-conversation": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:^",
-    "@deepseek-ai/dsh-commands": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-session": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^",
+    "@ikun-ai/cordis-plugin-loader": "workspace:^",
+    "@ikun-ai/dsh-agent": "workspace:^",
+    "@ikun-ai/dsh-client-locale": "workspace:^",
+    "@ikun-ai/dsh-client-runtime": "workspace:^",
+    "@ikun-ai/dsh-client-ui-commands": "workspace:^",
+    "@ikun-ai/dsh-client-ui-conversation": "workspace:^",
+    "@ikun-ai/dsh-client-ui-primitives": "workspace:^",
+    "@ikun-ai/dsh-client-ui-slots": "workspace:^",
+    "@ikun-ai/dsh-commands": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-session": "workspace:^",
     "@types/react": "~18.3.1",
     "react": "^18.2.0"
   },
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-runtime",
-        "@deepseek-ai/dsh-client-ui-commands",
-        "@deepseek-ai/dsh-client-ui-conversation"
+        "@ikun-ai/dsh-client-locale",
+        "@ikun-ai/dsh-client-runtime",
+        "@ikun-ai/dsh-client-ui-commands",
+        "@ikun-ai/dsh-client-ui-conversation"
       ],
       "platform": "web"
     }

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tool-pwsh",
+  "name": "@ikun-ai/dsh-tool-pwsh",
   "description": "Model-facing pwsh tool over the bash executor seam",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/shell/tool-pwsh"
   },
   "type": "module",
@@ -32,39 +32,39 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:^",
-    "@deepseek-ai/dsh-shell": "workspace:^",
-    "@deepseek-ai/dsh-shell-env": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-sandbox": "workspace:^",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:^",
-    "@deepseek-ai/dsh-system-prompt": "workspace:^",
-    "@deepseek-ai/dsh-jobs": "workspace:^",
-    "@deepseek-ai/dsh-tools": "workspace:^",
-    "@deepseek-ai/dsh-user-approval": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-agent": "workspace:^",
+    "@ikun-ai/dsh-shell": "workspace:^",
+    "@ikun-ai/dsh-shell-env": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-sandbox": "workspace:^",
+    "@ikun-ai/dsh-sandbox-policy": "workspace:^",
+    "@ikun-ai/dsh-system-prompt": "workspace:^",
+    "@ikun-ai/dsh-jobs": "workspace:^",
+    "@ikun-ai/dsh-tools": "workspace:^",
+    "@ikun-ai/dsh-user-approval": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:^"
+    "@ikun-ai/schemastery": "workspace:^"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:^",
-    "@deepseek-ai/dsh-shell": "workspace:^",
-    "@deepseek-ai/dsh-shell-env": "workspace:^",
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/dsh-llm": "workspace:^",
-    "@deepseek-ai/dsh-loader-smoke": "workspace:^",
-    "@deepseek-ai/dsh-pwsh-local": "workspace:^",
-    "@deepseek-ai/dsh-sandbox": "workspace:^",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:^",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:^",
-    "@deepseek-ai/dsh-system-prompt": "workspace:^",
-    "@deepseek-ai/dsh-jobs": "workspace:^",
-    "@deepseek-ai/dsh-jobs-local": "workspace:^",
-    "@deepseek-ai/dsh-tool-jobs": "workspace:^",
-    "@deepseek-ai/dsh-tools": "workspace:^",
-    "@deepseek-ai/dsh-user-approval": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-agent": "workspace:^",
+    "@ikun-ai/dsh-shell": "workspace:^",
+    "@ikun-ai/dsh-shell-env": "workspace:^",
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/dsh-llm": "workspace:^",
+    "@ikun-ai/dsh-loader-smoke": "workspace:^",
+    "@ikun-ai/dsh-pwsh-local": "workspace:^",
+    "@ikun-ai/dsh-sandbox": "workspace:^",
+    "@ikun-ai/dsh-sandbox-policy": "workspace:^",
+    "@ikun-ai/dsh-subprocess-local": "workspace:^",
+    "@ikun-ai/dsh-system-prompt": "workspace:^",
+    "@ikun-ai/dsh-jobs": "workspace:^",
+    "@ikun-ai/dsh-jobs-local": "workspace:^",
+    "@ikun-ai/dsh-tool-jobs": "workspace:^",
+    "@ikun-ai/dsh-tools": "workspace:^",
+    "@ikun-ai/dsh-user-approval": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

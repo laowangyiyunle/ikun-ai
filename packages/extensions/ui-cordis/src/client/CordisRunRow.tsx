@@ -3,9 +3,9 @@
 import { useEffect } from 'react'
 import {
   IconCodeOutline16, IconInspectOutline12, StateDot,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { InjectFace, PropsLocale, PropsRenderSlots } from '@deepseek-ai/dsh-client-ui-slots'
-import type { ToolCallViewProps } from '@deepseek-ai/dsh-client-ui-tool/client'
+} from '@ikun-ai/dsh-client-ui-primitives'
+import type { InjectFace, PropsLocale, PropsRenderSlots } from '@ikun-ai/dsh-client-ui-slots'
+import type { ToolCallViewProps } from '@ikun-ai/dsh-client-ui-tool/client'
 import { cordisRunCard } from './card-model.ts'
 import { cordisToolViewKey } from './run-card-index.ts'
 import type { CordisRunCardFace } from './slots.ts'
@@ -17,7 +17,7 @@ import css from './CordisRunRow.module.css'
 export type CordisRunRowProps = ToolCallViewProps
   & InjectFace<CordisRunCardFace>
   & PropsRenderSlots<'tool.view.cordis'>
-  & PropsLocale<'cordis'>
+  & PropsLocale<'@ikun-ai/cordis'>
 
 type RunReading = CordisVisibleStatus | 'awaiting-approval' | 'failed' | 'removed' | 'superseded'
 

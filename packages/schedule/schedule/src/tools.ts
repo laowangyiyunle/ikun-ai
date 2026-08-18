@@ -1,13 +1,13 @@
 /**
  * Agent-scoped Schedule management tools over the durable session fold.
- * @module @deepseek-ai/dsh-schedule
+ * @module @ikun-ai/dsh-schedule
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import type { GenericCallView } from '@deepseek-ai/dsh-tools'
+import type { Context } from '@ikun-ai/cordis'
+import type { Agent } from '@ikun-ai/dsh-agent'
+import type { ContentBlock } from '@ikun-ai/dsh-llm'
+import { defineTool } from '@ikun-ai/dsh-tools'
+import type { GenericCallView } from '@ikun-ai/dsh-tools'
 import {
   allocateScheduleId,
   createAfterScheduleRecord,

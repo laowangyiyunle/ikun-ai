@@ -6,9 +6,9 @@
  * generated card rather than rendering a control that cannot round-trip.
  */
 
-import type { SettingsScope, SnapshotStore } from '@deepseek-ai/dsh-client-runtime/client'
-import { rehydrateSchema, type SchemaNode } from '@deepseek-ai/dsh-client-schema-form'
-import type { SettingsNamespaceView } from '@deepseek-ai/dsh-api-remotes/client'
+import type { SettingsScope, SnapshotStore } from '@ikun-ai/dsh-client-runtime/client'
+import { rehydrateSchema, type SchemaNode } from '@ikun-ai/dsh-client-schema-form'
+import type { SettingsNamespaceView } from '@ikun-ai/dsh-api-remotes/client'
 import { CardForm, numberField, textField, type CardActions, type CardFieldSpec, type CardFieldState, type CardShell } from './card-form.ts'
 /** The control one generated field renders. */
 export type GenericFieldKind = 'text' | 'number' | 'select' | 'boolean'

@@ -5,9 +5,9 @@ import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { PassThrough, Writable } from 'node:stream'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import * as agentCore from '@deepseek-ai/dsh-agent-spine-demo'
-import JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+import { Context } from '@ikun-ai/cordis'
+import * as agentCore from '@ikun-ai/dsh-agent-spine-demo'
+import JsonlSessionPersistence from '@ikun-ai/dsh-session-persistence-jsonl'
 import * as jsonrpc from '../src/index.ts'
 
 /**

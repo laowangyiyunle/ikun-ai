@@ -1,6 +1,6 @@
 /** The generated card: one settings namespace served without a dedicated card. */
 
-import type { InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
+import type { InjectFace, PropsLocale, PropsRuntime } from '@ikun-ai/dsh-client-ui-slots'
 import { SelectField, ValueField } from './fields.tsx'
 import { PluginCard } from './PluginCard.tsx'
 import type { GenericCardFace } from './generic-card-controller.ts'

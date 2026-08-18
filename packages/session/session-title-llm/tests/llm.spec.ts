@@ -1,17 +1,17 @@
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@ikun-ai/cordis'
 import { describe, expect, it, vi } from 'vitest'
-import LlmRuntime, { createUserMessage, CallId, isAgentLoopRequest, LlmAdapter  } from '@deepseek-ai/dsh-llm'
-import type { FinishReason, GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import SessionStore, { SessionId } from '@deepseek-ai/dsh-session'
-import { SessionTitleProviderId } from '@deepseek-ai/dsh-session-title'
-import type { SessionTitleProviderRequest } from '@deepseek-ai/dsh-session-title'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+import LlmRuntime, { createUserMessage, CallId, isAgentLoopRequest, LlmAdapter  } from '@ikun-ai/dsh-llm'
+import type { FinishReason, GenerateOptions, StreamChunk } from '@ikun-ai/dsh-llm'
+import SessionStore, { SessionId } from '@ikun-ai/dsh-session'
+import { SessionTitleProviderId } from '@ikun-ai/dsh-session-title'
+import type { SessionTitleProviderRequest } from '@ikun-ai/dsh-session-title'
+import { MAX_TIMER_DELAY_MS } from '@ikun-ai/dsh-timeout'
 import {
   generateSessionTitleWithLlm,
   resolveSessionTitleLlmConfig,
   SESSION_TITLE_TIMEOUT_CODE,
-} from '@deepseek-ai/dsh-session-title-llm'
-import type { SessionTitleLlmConfig } from '@deepseek-ai/dsh-session-title-llm'
+} from '@ikun-ai/dsh-session-title-llm'
+import type { SessionTitleLlmConfig } from '@ikun-ai/dsh-session-title-llm'
 
 class RecordingAdapter extends LlmAdapter {
   readonly requests: GenerateOptions[] = []

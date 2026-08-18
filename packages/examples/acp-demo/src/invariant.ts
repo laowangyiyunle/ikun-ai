@@ -1,13 +1,13 @@
 /**
- * Package-owned invariant companion for `@deepseek-ai/dsh-acp-demo`.
- * @module @deepseek-ai/dsh-acp-demo/invariant
+ * Package-owned invariant companion for `@ikun-ai/dsh-acp-demo`.
+ * @module @ikun-ai/dsh-acp-demo/invariant
  */
 
 /* jscpd:ignore-start */
-import type { Context } from '@deepseek-ai/cordis'
-import type { InvariantInstaller } from '@deepseek-ai/dsh-invariants'
+import type { Context } from '@ikun-ai/cordis'
+import type { InvariantInstaller } from '@ikun-ai/dsh-invariants'
 
-const PACKAGE_NAME = '@deepseek-ai/dsh-acp-demo'
+const PACKAGE_NAME = '@ikun-ai/dsh-acp-demo'
 
 /** Cordis companion plugin name. */
 export const name = 'acp-demo-invariant'

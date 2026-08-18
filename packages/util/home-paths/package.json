@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-home-paths",
+  "name": "@ikun-ai/dsh-home-paths",
   "description": "Shared filesystem path helpers for the DeepSeek Harness",
   "version": "0.1.0-rc.5",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/laowangyiyunle/ikun-ai.git",
     "directory": "packages/util/home-paths"
   },
   "type": "module",
@@ -32,11 +32,11 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-invariants": "workspace:^",
-    "@deepseek-ai/cordis": "workspace:^"
+    "@ikun-ai/dsh-invariants": "workspace:^",
+    "@ikun-ai/cordis": "workspace:^"
   }
 }

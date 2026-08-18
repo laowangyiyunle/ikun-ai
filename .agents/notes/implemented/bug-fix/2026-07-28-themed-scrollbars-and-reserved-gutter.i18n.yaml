@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/bug-fix/2026-07-28-themed-scrollbars-and-reserved-gutter.md
-2026-07-28-themed-scrollbars-and-reserved-gutter.md: a820a92406ce4054f16922064772d03c6ac3ab83
-2026-07-28-themed-scrollbars-and-reserved-gutter.zh.md: 80104c4aca5986c3a1f49186ac4adf3169f46da5
+2026-07-28-themed-scrollbars-and-reserved-gutter.md: b261f680a94729937272c3966cc8ba5380fac591
+2026-07-28-themed-scrollbars-and-reserved-gutter.zh.md: 0f02476598e8c0f714f485e2f1f6f8295e082072

@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/rescope.md
-rescope.md: 3dde39875021e7a4161e1ae66550e9dedf5eb4fa
-rescope.zh.md: a7f355cf651fb063bf2d4c3cefe18babd4a57401
+rescope.md: c7d05d37a0fcd09ffabe57a1ab5bff30fdff5e25
+rescope.zh.md: 4ac61f92e094aad24343348fa5f9a35ec510e187
